@@ -11,31 +11,34 @@
 
 <body>
 
-    <header><img src="" alt="logo">
+    <header>
+        <div class="header"><img class="bild" src="/Bilder/Kyh logga.jpg" alt="logo"></div>
 
     </header>
 
     <main>
         <div class="container">
+            <h1>Felanmälan</h1>
             <form class="formulär">
+              
 
                 <div>
-                    <label for="namn">Namn</label><br>
-                    <input class="namn" type="namn" placeholder="Namn">
+                    <label for="namn">NAMN</label><br>
+                    <input type="namn" class="textfält">
                 </div>
 
                 <div>
-                    <label for="email">Email</label><br>
-                    <input class="email" type="email" placeholder="Email">
+                    <label for="email">EMAIL</label><br>
+                    <input type="email"class="textfält">
                 </div>
 
                 <div>
                 
 
-                    <div class="custom-select" style="width:200px;">
-
-                        <select>
-                          <option value="0">Rubrik</option>
+                    <div class="custom-select">
+                        <p>RUBRIK</p>
+                        <select class="rubrik">
+                          <option value="0">Ärendehantering</option>
                           <option value="0">Avlopp</option>
                           <option value="1">Belysning</option>
                           <option value="2">Dörrar/fönster</option>
@@ -49,8 +52,8 @@
                 </div>
 
                 <div class="meddelande">
-                    <label>Beskriv ditt ärende</label><br>
-                    <textarea name="namn" id="meddelande" cols="30" rows="10" placeholder="Skriv ditt meddelande här"></textarea>
+                    <label>MEDDELANDE</label><br>
+                    <textarea name="namn" id="meddelande" cols="30" rows="10" placeholder="Beskriv ditt ärende här..." class="textfält"></textarea>
                 </div>
 
                 <button>Submit</button>
@@ -58,12 +61,17 @@
             </form> 
         </div>
 
-        <div>
-            <h4></h4>
-        </div>
+ 
 
     </main>
+    <div class="userLista">
+        <h4>Tidpunkt</h4>
+        <h4>Namn</h4>
+        <h4>Email</h4>
+        <h4>Rubrik</h4>
+        <h4>Ärndestatus</h4>
 
+    </div>
     <script src="script.js"></script>
 </body>
 

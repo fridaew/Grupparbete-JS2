@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.header{
+    background: #FA6400;
+    margin-top: 20px;
+}
+.bild{
+   display: grid;
+   margin-left: 80px;
+  }
+.container{
+    width: 100%;
+    background-color: #f6f6f6;
+    display: grid;
+    place-items: center;
+}
+.formulär{
+    background-color: rgb(254, 246, 246);
+    border: 1px solid black;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.formulär div{
+    padding: 5px;
+    background-color: #f6f6f6;
+    
+}
+
+button{
+    background-color: #5CB85C;
+    color: #f6f6f6;
+    border: none;
+    padding: 10px;
+    margin:5px
+
+
+}
+
+button:hover {
+    background-color: #57cd57;
+}
+.textfält{
+    width: 100%;
+    padding: 6px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.rubrik{
+    width: 60%;
+    padding: 6px;
+    margin-left: -5px;
+}
+
+.userLista{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+}
