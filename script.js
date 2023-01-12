@@ -10,7 +10,7 @@ const load = () => {
     fetch(BAS_URL)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            console.log(data.message);
 
 
 
@@ -20,12 +20,35 @@ const load = () => {
 }
 
 load()
-const handleSubmit = e => {
+const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
+    e.preventDefault()
+    const newUser = {
+        email: document.querySelector('#email').value,
+        message: document.querySelector('#message').value ,
+        subject: document.querySelector('#subject').value,
+    }
+    //console.log(newUser);
+
+
+ fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify(newUser),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+ })
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+
+
 }
+
+
 form.addEventListener('submit', handleSubmit)
 
 
 button.addEventListener('submit', e =>{
     e.preventDefault()
+
     
 })
