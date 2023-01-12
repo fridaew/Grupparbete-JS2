@@ -12,7 +12,7 @@
 <body>
 
     <header>
-        <div class="header"><img class="bild" src="/Bilder/Kyh logga.jpg" alt="logo"></div>
+        <div class="header"><img class="bild" src="./Bilder/Kyh logga.jpg" alt="logo"></div>
 
     </header>
 
@@ -24,12 +24,12 @@
 
                 <div>
                     <label for="namn">NAMN</label><br>
-                    <input type="namn" class="textfält">
+                    <input type="namn" id="name" class="textfält">
                 </div>
 
                 <div>
                     <label for="email">EMAIL</label><br>
-                    <input type="email"class="textfält">
+                    <input type="email" id="email" class="textfält">
                 </div>
 
                 <div>
@@ -37,7 +37,7 @@
 
                     <div class="custom-select">
                         <p>RUBRIK</p>
-                        <select class="rubrik">
+                        <select class="rubrik" id="subject">
                           <option value="0">Ärendehantering</option>
                           <option value="0">Avlopp</option>
                           <option value="1">Belysning</option>
@@ -46,14 +46,13 @@
                           <option value="4">Hiss/trapphus</option>
                           <option value="5">IT</option>
                           <option value="6">Övrigt</option>
-        
                         </select>
                       </div>
                 </div>
 
                 <div class="meddelande">
                     <label>MEDDELANDE</label><br>
-                    <textarea name="namn" id="meddelande" cols="30" rows="10" placeholder="Beskriv ditt ärende här..." class="textfält"></textarea>
+                    <textarea name="namn" id="message" cols="30" rows="10" placeholder="Beskriv ditt ärende här..." class="textfält"></textarea>
                 </div>
 
                 <button>Submit</button>
