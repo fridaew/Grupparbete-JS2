@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,63 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <header><img src="" alt="logo">
+
+    </header>
+
+    <main>
+        <div class="container">
+            <form class="formulär">
+
+                <div>
+                    <label for="namn">Namn</label><br>
+                    <input class="namn" type="namn" placeholder="Namn">
+                </div>
+
+                <div>
+                    <label for="email">Email</label><br>
+                    <input class="email" type="email" placeholder="Email">
+                </div>
+
+                <div>
+                
+
+                    <div class="custom-select" style="width:200px;">
+
+                        <select>
+                          <option value="0">Rubrik</option>
+                          <option value="0">Avlopp</option>
+                          <option value="1">Belysning</option>
+                          <option value="2">Dörrar/fönster</option>
+                          <option value="3">El</option>
+                          <option value="4">Hiss/trapphus</option>
+                          <option value="5">IT</option>
+                          <option value="6">Övrigt</option>
+        
+                        </select>
+                      </div>
+                </div>
+
+                <div class="meddelande">
+                    <label>Beskriv ditt ärende</label><br>
+                    <textarea name="namn" id="meddelande" cols="30" rows="10" placeholder="Skriv ditt meddelande här"></textarea>
+                </div>
+
+                <button>Submit</button>
+
+            </form> 
+        </div>
+
+        <div>
+            <h4></h4>
+        </div>
+
+    </main>
+
     <script src="script.js"></script>
 </body>
+
 </html>
