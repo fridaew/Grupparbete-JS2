@@ -22,6 +22,8 @@ const load = () => {
 load()
 const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
     e.preventDefault()
+
+
     const newUser = {
         email: document.querySelector('#email').value,
         message: document.querySelector('#message').value ,
@@ -30,7 +32,7 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
     //console.log(newUser);
 
 
- fetch('https://jsonplaceholder.typicode.com/posts', {
+ fetch(BAS_URL, {
   method: 'POST',
   body: JSON.stringify(newUser),
   headers: {
@@ -47,8 +49,6 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
 form.addEventListener('submit', handleSubmit)
 
 
-button.addEventListener('submit', e =>{
-    e.preventDefault()
+
 
     
-})
