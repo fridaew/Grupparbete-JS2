@@ -13,58 +13,56 @@
 
     <header>
         <div class="header"><img class="bild" src="./Bilder/Kyh logga.jpg" alt="logo"></div>
-
     </header>
 
-    <main>
-        <div class="container">
-            <h1>Felanmälan</h1>
-            <form class="formulär">
-            
 
-                <div>
-                    <label for="email">EMAIL</label><br>
-                    <input type="email" id="email" class="textfält">
+    <div class="container">
+        <h1>Felanmälan</h1>
+        
+        <form class="formulär">     
+
+            <div class="email">
+                <p>EMAIL</p>
+                <input type="email" id="email" class="textfält">
+            </div>
+
+            <div>
+                <div class="custom-select">
+                    <p>RUBRIK</p>
+                    <select class="rubrik" id="subject">
+                        <option value="ärende">Ärendehantering</option>
+                        <option value="Avlopp">Avlopp</option>
+                        <option value="Belysning">Belysning</option>
+                        <option value="Dörrar/fönster">Dörrar/fönster</option>
+                        <option value="El">El</option>
+                        <option value="Hiss/trapphus">Hiss/trapphus</option>
+                        <option value="IT">IT</option>
+                        <option value="Övrigt">Övrigt</option>
+                    </select>
                 </div>
+            </div>
 
-                <div>
-                
+            <div class="meddelande">
+                <p>MEDDELANDE</p>
+                <textarea name="namn" id="message" cols="30" rows="10" placeholder="Beskriv ditt ärende här..." class="textfält"></textarea>
+            </div>
 
-                    <div class="custom-select">
-                        <p>RUBRIK</p>
-                        <select class="rubrik" id="subject">
-                          <option value="ärende">Ärendehantering</option>
-                          <option value="Avlopp">Avlopp</option>
-                          <option value="Belysning">Belysning</option>
-                          <option value="Dörrar/fönster">Dörrar/fönster</option>
-                          <option value="El">El</option>
-                          <option value="Hiss/trapphus">Hiss/trapphus</option>
-                          <option value="IT">IT</option>
-                          <option value="Övrigt">Övrigt</option>
-                        </select>
-                      </div>
-                </div>
+            <button class="button">Submit</button>
 
-                <div class="meddelande">
-                    <label>MEDDELANDE</label><br>
-                    <textarea name="namn" id="message" cols="30" rows="10" placeholder="Beskriv ditt ärende här..." class="textfält"></textarea>
-                </div>
+        </form> 
 
-                <button class="button">Submit</button>
+    </div>
 
-            </form> 
-        </div>
- 
 
-    </main>
     <div class="userLista">
         <h4>Tidpunkt</h4>
         <h4>Namn</h4>
         <h4>Email</h4>
         <h4>Rubrik</h4>
         <h4>Ärndestatus</h4>
-
     </div>
+
+    
     <script src="script.js"></script>
 </body>
 

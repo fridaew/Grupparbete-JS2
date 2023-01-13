@@ -112,6 +112,7 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
 }
 
 
+
 form.addEventListener('submit', handleSubmit)
 
 
