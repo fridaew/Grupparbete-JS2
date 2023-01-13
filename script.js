@@ -1,4 +1,4 @@
-const BAS_URL = ('https://fnd22-shared.azurewebsites.net/swagger/v1/swagger.json')
+const BAS_URL = (' https://fnd22-shared.azurewebsites.net/api/cases')
 
 const userList = []
 
@@ -10,7 +10,19 @@ const load = () => {
     fetch(BAS_URL)
         .then(res => res.json())
         .then(data => {
-            console.log(data.message);
+            console.log(data);
+            data.forEach(post => {
+               // console.log(post);
+               form.innerHTML += `
+               <article>
+               <h2>${post.email}</h2>
+               <small>${post.message}</small>
+               <p>${post.subject}</p>
+               </article>
+               `
+
+                
+            });
 
 
 
@@ -18,6 +30,9 @@ const load = () => {
         })
 
 }
+
+
+
 
 load()
 const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
