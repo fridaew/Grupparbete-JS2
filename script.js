@@ -13,12 +13,29 @@ const load = () => {
         .then(data => {
             console.log(data);
 
+            data.forEach(post => {
+             form.innerHTML += `
+            <article>
+            <h2>${post.email}</h2>
+            <small>${post.subject}</small>
+            <p>${post.id}</p>
+            <p>${post.created}</p>
+
+             </article>
+            `
+
+            });
+
+         
 
 
 
         })
 
 }
+
+
+
 
 load()
 
