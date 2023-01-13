@@ -1,4 +1,4 @@
-const BAS_URL = (' https://fnd22-shared.azurewebsites.net/api/cases')
+const BAS_URL = ' https://fnd22-shared.azurewebsites.net/api/Cases'
 
 const userList = []
 
@@ -11,19 +11,21 @@ const load = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            data.forEach(post => {
-               // console.log(post);
-               form.innerHTML += `
-               <article>
-               <h2>${post.email}</h2>
-               <small>${post.message}</small>
-               <p>${post.subject}</p>
-               </article>
-               `
 
-                
+            data.forEach(post => {
+             form.innerHTML += `
+            <article>
+            <h2>${post.email}</h2>
+            <small>${post.subject}</small>
+            <p>${post.id}</p>
+            <p>${post.created}</p>
+
+             </article>
+            `
+
             });
 
+         
 
 
 
@@ -35,6 +37,8 @@ const load = () => {
 
 
 load()
+
+
 const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
     e.preventDefault()
 
@@ -44,18 +48,20 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
         message: document.querySelector('#message').value ,
         subject: document.querySelector('#subject').value,
     }
-    //console.log(newUser);
+    // console.log(newUser);
 
 
- fetch(BAS_URL, {
+  fetch(BAS_URL, {
   method: 'POST',
   body: JSON.stringify(newUser),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
   },
+  
  })
+ 
   .then((response) => response.json())
-  .then((json) => console.log(json));
+  .then((data) => console.log(data));
 
 
 }
