@@ -1,4 +1,5 @@
-const BAS_URL = ' https://fnd22-shared.azurewebsites.net/api/Cases'
+const BAS_URL = ' https://fnd22-shared.azurewebsites.net/api/Cases/'
+// const BAS_URL1 = ' https://fnd22-shared.azurewebsites.net/api/statuses'
 
 const userList = []
 
@@ -51,6 +52,9 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
 
 
 form.addEventListener('submit', handleSubmit)
+
+
+
 
 
 
