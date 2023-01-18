@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 
 <body>
@@ -19,8 +20,8 @@
     <div class="container">
         <h1>Felanmälan</h1>
         
-        <form class="formulär">     
-
+        <form class="formulär">  
+            
             <div class="email">
                 <p>EMAIL</p>
                 <input type="email" id="email" class="textfält">
@@ -53,14 +54,16 @@
 
     </div>
 
-
-    <div class="userLista">
-        <h4>Tidpunkt</h4>
-        <h4>Namn</h4>
-        <h4>Email</h4>
-        <h4>Rubrik</h4>
-        <h4>Ärndestatus</h4>
+    <!-- <a href="detail.html" class="userLista-länk"> -->
+    <div class="userLista" id="userLista">
+    
+        <p class="userLista-tidpunkt">Tidpunkt</p>
+        <p class="userLista-email">Email</p>
+        <p class="userLista-subject">Rubrik</p>
+        <p class="userLista-ärendestatus">Ärndestatus</p>
+    
     </div>
+<!-- </a> -->
 
     
     <script src="script.js"></script>
