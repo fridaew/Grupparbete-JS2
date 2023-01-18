@@ -76,24 +76,22 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
     console.log(newUser);
 
 
-  fetch(BAS_URL, {
+  fetch (BAS_URL, {
   method: 'POST',
   body: JSON.stringify(newUser),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
+
   },
   
  })
- 
- .then((response) => response.json())
- .then((data) => {
+// fetch(BAS_URL)
+  .then((response) => response.json())
+  .then((data) => console.log(data));
 
-   console.log(data);
+  form.reset()
 
-   userList.push(data)
-   const userElement = createElement(data)
-   lista.appendChild(userElement)
- });
+
   
 }
 form.addEventListener('submit', handleSubmit)
