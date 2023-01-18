@@ -16,11 +16,12 @@ const load = () => {
             listinUser()
         
 
-            console.log(userList);
+            
       })
 }
 
 load()
+
 
 
 const listinUser = () => {
@@ -69,7 +70,7 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
 
     const newUser = {
         email: document.querySelector('#email').value,
-        message: document.querySelector('#message').value ,
+        message: document.querySelector('#message').value,
         subject: document.querySelector('#subject').value,
     }
     // console.log(newUser);
@@ -84,10 +85,15 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
   
  })
  
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+ .then((response) => response.json())
+ .then((data) => {
 
-  form.reset()
+   console.log(data);
+
+   userList.push(data)
+   const userElement = createElement(data)
+   lista.appendChild(userElement)
+ });
   
 }
 form.addEventListener('submit', handleSubmit)
