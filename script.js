@@ -73,7 +73,7 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
         message: document.querySelector('#message').value,
         subject: document.querySelector('#subject').value,
     }
-    // console.log(newUser);
+    console.log(newUser);
 
 
   fetch(BAS_URL, {
