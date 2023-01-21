@@ -26,13 +26,17 @@ load()
 
 
 const listinUser = () => { //visar listan över alla cases
+
   lista.innerHTML ='';
+
+  userList.sort((a, b) => {
+    return new Date(b.modified) - new Date(a.modified);
+  });
 
   userList.forEach(users => {
     const userElement = createElement(users)
     lista.appendChild(userElement)
-    
-  })
+    })
   
 }
 
@@ -75,8 +79,12 @@ fetch(url)
     console.log(data); // "data" will contain the case with the ID of caseId
 
     userList.push(data)
-    const caseElement=createElement(data)
-    lista.appendChild(caseElement)
+
+   
+
+    // const caseElement=createElement(data)
+    // lista.appendChild(caseElement)
+    listinUser()
     console.log(userList);
   })
   
@@ -85,6 +93,7 @@ fetch(url)
 const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
     e.preventDefault()
 
+  
 
     const newUser = {
         email: document.querySelector('#email').value,
