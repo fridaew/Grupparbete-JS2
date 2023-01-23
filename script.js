@@ -79,11 +79,6 @@ fetch(url)
     console.log(data); // "data" will contain the case with the ID of caseId
 
     userList.push(data)
-
-   
-
-    // const caseElement=createElement(data)
-    // lista.appendChild(caseElement)
     listinUser()
     console.log(userList);
   })
