@@ -42,7 +42,12 @@ const listinUser = () => { //visar listan över alla cases
 
 
 const createElement = (userInput) => { //skapar html element
- 
+
+  //___________________
+  let aTag = document.createElement('a')
+  aTag.className = 'aTag'
+  aTag.setAttribute('href', `details.html`)
+ //___________________
   let user = document.createElement('div')
   user.classList.add('userLista')
 
@@ -67,6 +72,8 @@ const createElement = (userInput) => { //skapar html element
   user.appendChild(status)
   user.appendChild(time)
 
+  aTag.appendChild(user)
+
   return user
 }
 
@@ -86,6 +93,7 @@ fetch(url)
     // lista.appendChild(caseElement)
     listinUser()
     console.log(userList);
+    
   })
   
 }
@@ -126,11 +134,3 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
 form.addEventListener('submit', handleSubmit)
 
 
-
-
-
-
-
-
-
-    

@@ -76,4 +76,6 @@ button:hover {
     background-color: azure;
     padding: 30px;
     margin-top: 20px;
+    cursor: pointer;
 }
+

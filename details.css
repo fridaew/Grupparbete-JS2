@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: #f6f6f6;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 1rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header{
+    background: #FA6400;
+    margin-top: 20px;
+}
+
+.bild{
+    display: grid;
+    margin-left: 80px;
+}
+.userLista{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border: 1px solid rgb(225, 222, 222);
+    box-shadow: 1px;
+}
+
+
+.userLista p{
+    font-weight: bold;
+    padding: 15px;
+    border: 1px solid gainsboro;
+}
+
+.shadow{
+    background-color: #ebe8e8;
+}
