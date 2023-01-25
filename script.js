@@ -1,5 +1,5 @@
-const BAS_URL = ' https://fnd22-shared.azurewebsites.net/api/Cases '
-const userList = []
+const BAS_URL = ' https://fnd22-shared.azurewebsites.net/api/Cases'
+const userList = [] // skapar en tom array där varje fall sparas
 const lista = document.querySelector('.userLista')
 const form = document.querySelector('.formulär')
 const button = document.querySelector('.button')
@@ -11,31 +11,34 @@ const load = () => {
         .then(data => {
       
         data.forEach(user => {    //sparar anvöndar i min lokaka array
-          userList.unshift(user)
+          userList.push(user)
         })
             listinUser()
-        
+           
+           
+          console.log(userList);
 
-            console.log(userList);
-      })
+        })
 }
 
 load()
 
 
-const listinUser = () => {
+
+const listinUser = () => { //visar listan över alla cases
   lista.innerHTML ='';
 
   userList.forEach(users => {
     const userElement = createElement(users)
     lista.appendChild(userElement)
+    
   })
-
+  
 }
 
 
-const createElement = (userInput) => {
-
+const createElement = (userInput) => { //skapar html element
+ 
   let user = document.createElement('div')
   user.classList.add('userLista')
 
@@ -44,7 +47,7 @@ const createElement = (userInput) => {
   subject.innerText = ('Ärende: ') + userInput.subject
 
   let email = document.createElement('p')
-  subject.classList.add('userLista-email')
+  email.classList.add('userLista-email')
   email.innerText = ('Email: ') + userInput.email
 
   let status = document.createElement('p')
@@ -63,6 +66,21 @@ const createElement = (userInput) => {
   return user
 }
 
+const load2 = (caseId) => { 
+  console.log(caseId);
+const url = BAS_URL + '/' + caseId;
+fetch(url)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data); // "data" will contain the case with the ID of caseId
+
+    userList.push(data)
+    const caseElement=createElement(data)
+    lista.appendChild(caseElement)
+    console.log(userList);
+  })
+  
+}
 
 const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
     e.preventDefault()
@@ -70,31 +88,38 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
 
     const newUser = {
         email: document.querySelector('#email').value,
-        message: document.querySelector('#message').value ,
+        message: document.querySelector('#message').value,
         subject: document.querySelector('#subject').value,
+        
     }
     // console.log(newUser);
 
 
-  fetch (BAS_URL, {
+  fetch(BAS_URL,{
   method: 'POST',
   body: JSON.stringify(newUser),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
-
+    
   },
+ 
+  
   
  })
-// fetch(BAS_URL)
   .then((response) => response.json())
-  .then((data) => console.log(data));
+  .then((data) =>load2(data));
 
-  form.reset()
-
-
+   userList.push()
+   listinUser()
   
+  form.reset()//rensar formuläret
 }
 form.addEventListener('submit', handleSubmit)
+
+
+
+
+
 
 
 

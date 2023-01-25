@@ -5,8 +5,13 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body{
+    background-color: #f6f6f6;
+}
+
 h1 {
     font-size: 2rem;
+    margin: 1rem;
 }
 
 .header{
@@ -19,7 +24,6 @@ h1 {
   }
 .container{
     width: 100%;
-    background-color: #f6f6f6;
     display: grid;
     place-items: center;
 }
@@ -45,7 +49,8 @@ button{
 }
 
 button:hover {
-    background-color: #57cd57;
+    background-color: #62c062;
+    
 }
 .textfält{
     width: 100%;
@@ -53,7 +58,7 @@ button:hover {
     border: 1px solid black;
     box-sizing: border-box;
     margin-top: 5px;
-    margin-bottom: 15px;
+   
 }
 
 .rubrik{
@@ -63,6 +68,7 @@ button:hover {
 }
 
 .userLista{
+ 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
