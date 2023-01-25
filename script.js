@@ -1,6 +1,6 @@
 const BAS_URL = ' https://fnd22-shared.azurewebsites.net/api/Cases'
 const userList = [] // skapar en tom array där varje fall sparas
-const lista = document.querySelector('.userLista')
+const lista = document.querySelector('#userLista')
 const form = document.querySelector('.formulär')
 const button = document.querySelector('.button')
 
@@ -42,14 +42,10 @@ const listinUser = () => { //visar listan över alla cases
 
 
 const createElement = (userInput) => { //skapar html element
-
-  //___________________
-  let aTag = document.createElement('a')
-  aTag.className = 'aTag'
-  aTag.setAttribute('href', `details.html`)
- //___________________
-  let user = document.createElement('div')
+ 
+  let user = document.createElement('a')
   user.classList.add('userLista')
+  user.setAttribute('href',`details.html?id=${userInput.id}`)
 
   let subject = document.createElement('p')
   subject.classList.add('userLista-subject')
@@ -72,7 +68,6 @@ const createElement = (userInput) => { //skapar html element
   user.appendChild(status)
   user.appendChild(time)
 
-  aTag.appendChild(user)
 
   return user
 }
@@ -86,11 +81,6 @@ fetch(url)
     console.log(data); // "data" will contain the case with the ID of caseId
 
     userList.push(data)
-
-   
-
-    // const caseElement=createElement(data)
-    // lista.appendChild(caseElement)
     listinUser()
     console.log(userList);
     

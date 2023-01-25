@@ -9,18 +9,27 @@ body{
     background-color: #f6f6f6;
 }
 
-h1 {
+header h1 {
     font-size: 2rem;
     margin: 1rem;
+    font-family: 'Manrope', sans-serif;
+    margin-left: 40rem;
+    
 }
-
-.header{
+header{
+    display: flex;
+    flex-direction: row;
     background: #FA6400;
     margin-top: 20px;
+    color: #f6f6f6;
 }
+
+
 .bild{
    display: grid;
    margin-left: 80px;
+   height: 70px;
+   position:absolute;
   }
 .container{
     width: 100%;
@@ -28,11 +37,14 @@ h1 {
     place-items: center;
 }
 .formulär{
-    background-color: rgb(254, 246, 246);
+    background-color: rgb(247, 246, 246);
     border: 1px solid black;
     width: 600px;
     display: flex;
     flex-direction: column;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: .5rem;
 }
 .formulär div{
     padding: 5px;
@@ -68,14 +80,35 @@ button:hover {
 }
 
 .userLista{
- 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border: 1px solid black;
-    background-color: azure;
+    background-color: #f6f6f6;
     padding: 30px;
-    margin-top: 20px;
-    cursor: pointer;
+    margin-top: 30px;
+   
+    
 }
+.userLista a{
+ text-decoration: none;
+ color: black;
+ border: 1px solid black;
+ border-radius: 10px;
+ background-color: azure;
+
+}
+
+.userLista div{
+  background-color: rgb(203, 239, 239);
+  border:1px solid black;
+  margin:0 30px 0 30px;
+  border-radius:10px ;
+}
+
+
+.userLista p {
+margin-bottom: 8px;
+font-size: 1.2rem;
+}
+
 
