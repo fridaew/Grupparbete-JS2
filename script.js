@@ -1,6 +1,6 @@
 const BAS_URL = ' https://fnd22-shared.azurewebsites.net/api/Cases'
 const userList = [] // skapar en tom array där varje fall sparas
-const lista = document.querySelector('.userLista')
+const lista = document.querySelector('#userLista')
 const form = document.querySelector('.formulär')
 const button = document.querySelector('.button')
 
@@ -26,21 +26,26 @@ load()
 
 
 const listinUser = () => { //visar listan över alla cases
+
   lista.innerHTML ='';
+
+  userList.sort((a, b) => {
+    return new Date(b.modified) - new Date(a.modified);
+  });
 
   userList.forEach(users => {
     const userElement = createElement(users)
     lista.appendChild(userElement)
-    
-  })
+    })
   
 }
 
 
 const createElement = (userInput) => { //skapar html element
  
-  let user = document.createElement('div')
+  let user = document.createElement('a')
   user.classList.add('userLista')
+  user.setAttribute('href',`details.html?id=${userInput.id}`)
 
   let subject = document.createElement('p')
   subject.classList.add('userLista-subject')
@@ -75,8 +80,7 @@ fetch(url)
     console.log(data); // "data" will contain the case with the ID of caseId
 
     userList.push(data)
-    const caseElement=createElement(data)
-    lista.appendChild(caseElement)
+    listinUser()
     console.log(userList);
   })
   
@@ -85,10 +89,7 @@ fetch(url)
 const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
     e.preventDefault()
 
-  userList.sort((a, b) => {
-    return new Date(b.modified) - new Date(a.modified);
-  });
-
+  
 
     const newUser = {
         email: document.querySelector('#email').value,
