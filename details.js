@@ -41,11 +41,16 @@ const createElement = (userInput) => { //skapar html element
     let time = document.createElement('p')
     time.classList.add('userLista-tidpunkt')
     time.innerText = ('Tidpunkt: ') + userInput.modified
+
+    let message = document.createElement('p')
+    message.classList.add('userLista-meddelande')
+    message.innerText = ('Meddelande: ') + userInput.message
   
     user.appendChild(subject)
     user.appendChild(email)
     user.appendChild(status)
     user.appendChild(time)
+    user.appendChild(message)
   
     return user
   }
