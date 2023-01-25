@@ -85,6 +85,10 @@ fetch(url)
 const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
     e.preventDefault()
 
+  userList.sort((a, b) => {
+    return new Date(b.modified) - new Date(a.modified);
+  });
+
 
     const newUser = {
         email: document.querySelector('#email').value,
