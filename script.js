@@ -107,9 +107,7 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
     'Content-type': 'application/json; charset=UTF-8',
     
   },
- 
-  
-  
+   
  })
   .then((response) => response.json())
   .then((data) =>load2(data));
