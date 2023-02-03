@@ -1,8 +1,9 @@
 const BAS_URL = ' https://fnd22-shared.azurewebsites.net/api/Cases'
+const BASE_URL = ' https://fnd22-shared.azurewebsites.net/api/Comments'
 const userList = [] // skapar en tom array där varje fall sparas
 const lista = document.querySelector('#userLista')
 const form = document.querySelector('.formulär')
-const button = document.querySelector('.button')
+// const commentsInput =document.querySelector('.userLista-kommentar')
 
 
 const load = () => {
@@ -63,10 +64,15 @@ const createElement = (userInput) => { //skapar html element
   time.classList.add('userLista-tidpunkt')
   time.innerText = ('Tidpunkt: ') + userInput.modified
 
+  // let input = document.createElement('input')
+  // input.classList.add('userLista-kommentar')
+  // input.innerText = ('Tidpunkt: ') + userInput.comments.modified
+
   user.appendChild(subject)
   user.appendChild(email)
   user.appendChild(status)
   user.appendChild(time)
+  // user.appendChild(input)
 
   return user
 }
@@ -120,6 +126,44 @@ const handleSubmit = e => { //skapar ett objekt som ska skickas till databasen
   form.reset()//rensar formuläret
 }
 form.addEventListener('submit', handleSubmit)
+
+
+
+
+
+// const handleSubmit2 = e => { //skapar ett objekt som ska skickas till databasen
+//     e.preventDefault()
+
+    
+  
+
+//     const newUser = {
+//         email: document.querySelector('#email').value,
+//         message: document.querySelector('#message').value,
+//         subject: document.querySelector('#subject').value,
+        
+//     }
+
+
+//   fetch(BASE_URL,{
+//   method: 'POST',
+//   body: JSON.stringify(newUser),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+    
+//   },
+ 
+  
+  
+//  })
+//   .then((response) => response.json())
+//   .then((data) =>load2(data));
+
+//    userList.push()
+//    listinUser()
+  
+// }
+// commentsInput.addEventListener('click', handleSubmit)
 
 
 

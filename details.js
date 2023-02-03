@@ -1,4 +1,5 @@
-const BAS_URL = ' https://fnd22-shared.azurewebsites.net/api/Cases/'
+const BAS_URL = 'https://fnd22-shared.azurewebsites.net/api/Cases/'
+
 const lista = document.querySelector('#userLista')
 
 
@@ -8,19 +9,18 @@ const id= params.get('id')
 console.log(id);
 
 const post = () => {
-    fetch(BAS_URL + id)      //hämtar ut information från api
+    fetch(BAS_URL + id)  
         .then(res => res.json())
         .then(data => {
             console.log(data);
             lista.appendChild(createElement(data))
       })
         
-        
 }
 
 post()
 
-const createElement = (userInput) => { //skapar html element
+const createElement = (userInput) => { 
  
     let user = document.createElement('div')
     user.classList.add('userLista')
@@ -45,20 +45,31 @@ const createElement = (userInput) => { //skapar html element
     let message = document.createElement('p')
     message.classList.add('userLista-meddelande')
     message.innerText = ('Meddelande: ') + userInput.message
-  
+
+
     user.appendChild(subject)
     user.appendChild(email)
     user.appendChild(status)
     user.appendChild(time)
     user.appendChild(message)
+    
+
   
     return user
   }
   
+  
+ 
+ 
 
 
 
 
-// params.forEach(par =>{
-//     console.log(par);
-// })
+
+
+
+  
+
+
+
+
